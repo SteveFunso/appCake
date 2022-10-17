@@ -47,7 +47,7 @@ class SeedUserCommand extends Command
         $user = new User;
 
         $user->setEmail('admin@example.com');
-        $user->setRoles(['ADMIN']);
+        $user->setRoles(['ROLE_ADMIN']);
         $user->setPassword($this->passwordHasher->hashPassword($user, 'pass123'));
 
         $this->userRepository->save($user, true);
@@ -58,7 +58,7 @@ class SeedUserCommand extends Command
         $user = new User;
 
         $user->setEmail('moderator@example.com');
-        $user->setRoles(['MODERATOR']);
+        $user->setRoles(['ROLE_MODERATOR']);
         $user->setPassword($this->passwordHasher->hashPassword($user, 'pass123'));
 
         $this->userRepository->save($user, true);
